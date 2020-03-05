@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://idkidknow.com/"/>
-  <updated>2020-01-24T14:23:45.008Z</updated>
+  <updated>2020-03-05T16:01:12.798Z</updated>
   <id>https://idkidknow.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>通过 Fiddler 修改响应体实现网站全局 JS 的变速齿轮功能</title>
+    <link href="https://idkidknow.com/2020/03/05/%E9%80%9A%E8%BF%87-Fiddler-%E4%BF%AE%E6%94%B9%E5%93%8D%E5%BA%94%E4%BD%93%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%AB%99%E5%85%A8%E5%B1%80-JS-%E7%9A%84%E5%8F%98%E9%80%9F%E9%BD%BF%E8%BD%AE%E5%8A%9F%E8%83%BD/"/>
+    <id>https://idkidknow.com/2020/03/05/通过-Fiddler-修改响应体实现网站全局-JS-的变速齿轮功能/</id>
+    <published>2020-03-05T14:49:21.000Z</published>
+    <updated>2020-03-05T16:01:12.798Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用轮子: jsgear</p><p>打开 Fiddler 4, 按下 Ctrl-R 以打开 Fiddler ScriptEditor.</p><p>找到方法 OnBeforeResponse, 在方法的最后添加代码: </p><pre><code>if (oSession.uriContains(&#39;xxxxxx.xxx/xxxxxx&#39;) &amp;&amp; oSession.oResponse.headers.ExistsAndContains(&quot;Content-Type&quot;,&quot;text/html&quot;)) {    oSession.utilDecodeResponse();    oSession.utilReplaceInResponse(&#39;&lt;head&gt;&#39;,&#39;&lt;head&gt;&lt;script src=&quot;https://www.etherdream.com/JSGear/jsgear.js&quot;&gt;&lt;/script&gt;&#39;);}</code></pre><p>xxxxxx.xxx/xxxxxx 为要适用的网址</p><p>打开指定网页(通过 Fiddler 代理), 响应体将被修改, jsgear 将被插入到所有脚本之前</p><p>测试某网课平台的作业计时: </p><img src="/2020/03/05/通过-Fiddler-修改响应体实现网站全局-JS-的变速齿轮功能/114514.png" title="いいよ"><p>奇妙的是 提交能成功..</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;使用轮子: jsgear&lt;/p&gt;
+&lt;p&gt;打开 Fiddler 4, 按下 Ctrl-R 以打开 Fiddler ScriptEditor.&lt;/p&gt;
+&lt;p&gt;找到方法 OnBeforeResponse, 在方法的最后添加代码: &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;if (oSess
+      
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="https://idkidknow.com/tags/javascript/"/>
+    
+      <category term="http" scheme="https://idkidknow.com/tags/http/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello, 2020</title>
@@ -261,7 +289,7 @@
     <link href="https://idkidknow.com/2018/06/23/%E5%9C%A8Linux%E4%B8%8A%E7%8E%A9osu-lazer%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BD%93%E9%AA%8C/"/>
     <id>https://idkidknow.com/2018/06/23/在Linux上玩osu-lazer是怎样的体验/</id>
     <published>2018-06-23T04:26:04.000Z</published>
-    <updated>2020-01-24T01:51:14.374Z</updated>
+    <updated>2020-03-05T15:54:44.911Z</updated>
     
     <content type="html"><![CDATA[<p>作为手残党，挂了 n 周目后默默地关了 osu!. 想到还没尝试过 osu!lazer, 于是我决定尝鲜一下。</p><p>懒癌晚期，跑到 AUR 上寻之，结果编译完以后有不明运行时错误……本人并不熟悉 C#, 于是乖乖地去 GitHub 上把源码 clone 下来，用 IDE(MonoDevelop) 编译。</p><hr><p>$mono ‘osu!.exe’</p><p>运行之</p><img src="/2018/06/23/在Linux上玩osu-lazer是怎样的体验/main.png" title="主界面"><p>磨砂玻璃的效果很让人满意。</p><img src="/2018/06/23/在Linux上玩osu-lazer是怎样的体验/background_blur.png" title="磨砂效果"><p>整体观感第一眼感觉很惊艳，但某些地方还是过于花哨。例如这个上升的三角形的动画，个人觉得太花了: </p><img src="/2018/06/23/在Linux上玩osu-lazer是怎样的体验/tri.gif" title="三角形动画"><hr><p>期待 ppy 的下一步。 (然后我开始对 C# 感兴趣了</p>]]></content>
     

@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>通过 Fiddler 修改响应体实现网站全局 JS 的变速齿轮功能</title>
+      <link href="/2020/03/05/%E9%80%9A%E8%BF%87-Fiddler-%E4%BF%AE%E6%94%B9%E5%93%8D%E5%BA%94%E4%BD%93%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%AB%99%E5%85%A8%E5%B1%80-JS-%E7%9A%84%E5%8F%98%E9%80%9F%E9%BD%BF%E8%BD%AE%E5%8A%9F%E8%83%BD/"/>
+      <url>/2020/03/05/%E9%80%9A%E8%BF%87-Fiddler-%E4%BF%AE%E6%94%B9%E5%93%8D%E5%BA%94%E4%BD%93%E5%AE%9E%E7%8E%B0%E7%BD%91%E7%AB%99%E5%85%A8%E5%B1%80-JS-%E7%9A%84%E5%8F%98%E9%80%9F%E9%BD%BF%E8%BD%AE%E5%8A%9F%E8%83%BD/</url>
+      <content type="html"><![CDATA[<p>使用轮子: jsgear</p><p>打开 Fiddler 4, 按下 Ctrl-R 以打开 Fiddler ScriptEditor.</p><p>找到方法 OnBeforeResponse, 在方法的最后添加代码: </p><pre><code>if (oSession.uriContains(&#39;xxxxxx.xxx/xxxxxx&#39;) &amp;&amp; oSession.oResponse.headers.ExistsAndContains(&quot;Content-Type&quot;,&quot;text/html&quot;)) {    oSession.utilDecodeResponse();    oSession.utilReplaceInResponse(&#39;&lt;head&gt;&#39;,&#39;&lt;head&gt;&lt;script src=&quot;https://www.etherdream.com/JSGear/jsgear.js&quot;&gt;&lt;/script&gt;&#39;);}</code></pre><p>xxxxxx.xxx/xxxxxx 为要适用的网址</p><p>打开指定网页(通过 Fiddler 代理), 响应体将被修改, jsgear 将被插入到所有脚本之前</p><p>测试某网课平台的作业计时: </p><img src="/2020/03/05/通过-Fiddler-修改响应体实现网站全局-JS-的变速齿轮功能/114514.png" title="いいよ"><p>奇妙的是 提交能成功..</p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+            <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Hello, 2020</title>
       <link href="/2020/01/24/Hello-2020/"/>
       <url>/2020/01/24/Hello-2020/</url>
