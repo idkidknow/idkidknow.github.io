@@ -1,0 +1,524 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#feeeed">
+  <meta name="author" content="Ivan Chen">
+  <meta name="keywords" content="博客,数学">
+  
+    <meta name="description" content="经过抽象并推广的谜题模型 谜题 \(a_1,a_2,\cdots,a_n\)是整数变量（模\(m\)剩余类）。\(P_1,P_2,\cdots,P_k\)为\(k\)个操作，操作\(P_i\)使\(a_1,a_2,\cdots,a_n\)数值分别增加\(P_{i1},P_{i2},\cdots,P_{in}.\quad(i&#x3D;1,2,\cdots,k)\) （模\(m\)意义下） 给定\(a_1,a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一类灵感来自稻妻解谜的谜题的通用解法">
+<meta property="og:url" content="https://idkidknow.com/2022/02/14/%E5%8E%9F%E7%A5%9E%E7%A8%BB%E5%A6%BB%E4%B8%AD%E4%B8%80%E7%B1%BB%E8%A7%A3%E8%B0%9C%E7%9A%84%E9%80%9A%E7%94%A8%E8%A7%A3%E6%B3%95/index.html">
+<meta property="og:site_name" content="Ivan Chen&#39;s Blog | idkidknow">
+<meta property="og:description" content="经过抽象并推广的谜题模型 谜题 \(a_1,a_2,\cdots,a_n\)是整数变量（模\(m\)剩余类）。\(P_1,P_2,\cdots,P_k\)为\(k\)个操作，操作\(P_i\)使\(a_1,a_2,\cdots,a_n\)数值分别增加\(P_{i1},P_{i2},\cdots,P_{in}.\quad(i&#x3D;1,2,\cdots,k)\) （模\(m\)意义下） 给定\(a_1,a">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://idkidknow.com/2022/02/14/%E5%8E%9F%E7%A5%9E%E7%A8%BB%E5%A6%BB%E4%B8%AD%E4%B8%80%E7%B1%BB%E8%A7%A3%E8%B0%9C%E7%9A%84%E9%80%9A%E7%94%A8%E8%A7%A3%E6%B3%95/1.png">
+<meta property="article:published_time" content="2022-02-13T17:47:25.000Z">
+<meta property="article:modified_time" content="2022-02-19T15:52:57.166Z">
+<meta property="article:author" content="Ivan Chen">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="原神">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://idkidknow.com/2022/02/14/%E5%8E%9F%E7%A5%9E%E7%A8%BB%E5%A6%BB%E4%B8%AD%E4%B8%80%E7%B1%BB%E8%A7%A3%E8%B0%9C%E7%9A%84%E9%80%9A%E7%94%A8%E8%A7%A3%E6%B3%95/1.png">
+  
+  
+  <title>一类灵感来自稻妻解谜的谜题的通用解法 - Ivan Chen&#39;s Blog | idkidknow</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"idkidknow.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":2,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":"UA-121321825-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Ivan Chen&#39;s Blog | idkidknow</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="一类灵感来自稻妻解谜的谜题的通用解法">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-02-14 01:47" pubdate>
+        2022年2月14日
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.2k 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">一类灵感来自稻妻解谜的谜题的通用解法</h1>
+            
+            <div class="markdown-body">
+              <h2 id="经过抽象并推广的谜题模型">经过抽象并推广的谜题模型</h2>
+<h3 id="谜题">谜题</h3>
+<p><span class="math inline">\(a_1,a_2,\cdots,a_n\)</span>是整数变量（模<span class="math inline">\(m\)</span>剩余类）。<span class="math inline">\(P_1,P_2,\cdots,P_k\)</span>为<span class="math inline">\(k\)</span>个操作，操作<span class="math inline">\(P_i\)</span>使<span class="math inline">\(a_1,a_2,\cdots,a_n\)</span>数值分别增加<span class="math inline">\(P_{i1},P_{i2},\cdots,P_{in}.\quad(i=1,2,\cdots,k)\)</span> （模<span class="math inline">\(m\)</span>意义下）</p>
+<p>给定<span class="math inline">\(a_1,a_2,\cdots,a_n\)</span>的初始值，试求有限的操作序列使<span class="math inline">\(a_1,a_2,\cdots,a_n\)</span>变为同一个数。（模<span class="math inline">\(m\)</span>意义下）</p>
+<h3 id="解法">解法</h3>
+<p>由加法交换律，操作的顺序并不影响结果。设<span class="math inline">\(P_1,P_2,\cdots,P_k\)</span>分别进行了<span class="math inline">\(x_1,x_2,\cdots,x_k\)</span>次，则<span class="math inline">\(a_1,a_2,\cdots,a_n\)</span>变为<span class="math inline">\(a_1+x_1P_{11}+x_2P_{21}+\cdots+x_kP_{k1},a_2+x_1P_{12}+x_2P_{22}+\cdots+x_kP_{k2},\cdots,a_n+x_1P_{1n}+x_2P_{2n}+\cdots+x_kP_{kn}\)</span></p>
+<p>即<span class="math display">\[S&#39;=S+PX\]</span></p>
+<p>其中 <span class="math inline">\(S&#39;=\begin{bmatrix}  a_1&#39;  \\a_2&#39;  \\\vdots  \\a_n&#39;  \end{bmatrix},\)</span> <span class="math inline">\(S=\begin{bmatrix}  a_1  \\a_2  \\\vdots  \\a_n  \end{bmatrix},\)</span> <span class="math inline">\(X=\begin{bmatrix}  x_1  \\x_2  \\\vdots  \\x_n  \end{bmatrix},\)</span> 不妨将操作<span class="math inline">\(P_i\)</span>记为向量 <span class="math inline">\(\begin{bmatrix}  P_{i1}  \\P_{i2}  \\\vdots  \\P_{in}  \end{bmatrix}\)</span> 则<span class="math inline">\(P=\begin{bmatrix}P_1&amp;P_2&amp;\cdots&amp;P_k\end{bmatrix}\)</span></p>
+<p>变形得到</p>
+<p><span class="math display">\[PX=S&#39;-S\]</span></p>
+<p>这是一个模<span class="math inline">\(m\)</span>意义下的线性方程组。我们只要给出一个解就解决了问题。</p>
+<p>如果<span class="math inline">\(m\)</span>为质数，则除<span class="math inline">\([0]\)</span>以外都有数论倒数。任取符合要求（即所有数相等）的<span class="math inline">\(S&#39;,\)</span>使用高斯消元法即可解决问题。</p>
+<p><span class="math inline">\(m\)</span>为质数的幂时，设<span class="math inline">\(m=p^t\)</span>，作高斯消元法，当进行到某一列时，若对角线元素无数论倒数（即有因子<span class="math inline">\(p\)</span>），则在下方将被消除的元素中找到与<span class="math inline">\(p\)</span>互质的元素，两者所在两行交换，便可正常进行消元。若所有将被消除 的元素中均是<span class="math inline">\(p\)</span>的倍数，则选取因子<span class="math inline">\(p\)</span>的次数最小的元素与原来的对角线元素所在两行对换，消元可正常进行。</p>
+<p><span class="math inline">\(m\)</span>为一般合数时，分解为不同质数的幂相乘的形式，分别改写成模不同质数的幂的线性方程组的形式并解之，最后用中国剩余定理合并解即可。</p>
+<p><span class="math inline">\(m\)</span>不为质数的情况任选<span class="math inline">\(S&#39;\)</span>可能无解，因此需要枚举<span class="math inline">\(O(m)\)</span>个<span class="math inline">\(S&#39;\)</span>来寻找解。若<span class="math inline">\(m\)</span>较大，计算上建议记录高斯消元法的步骤（表示为左乘原系数矩阵的矩阵）。</p>
+<h2 id="应用于原神解谜">应用于原神解谜</h2>
+<p>原神中相关谜题之于上述模型是特例中的特例，虽然简单但也正是这些谜题引出了上述问题与思考。</p>
+<img src="/2022/02/14/%E5%8E%9F%E7%A5%9E%E7%A8%BB%E5%A6%BB%E4%B8%AD%E4%B8%80%E7%B1%BB%E8%A7%A3%E8%B0%9C%E7%9A%84%E9%80%9A%E7%94%A8%E8%A7%A3%E6%B3%95/1.png" srcset="/img/loading.gif" lazyload class="" title="解谜">
+<p>如图谜题，即对其中某一方块，攻击之可改变自己和其余方块上的数字（以模<span class="math inline">\(3\)</span>加法的形式），原神中应该都具体为自己和相邻方块数字+1。解密目标为通过一连串攻击操作使所有方块数字相同。</p>
+<p>游戏内另有一类解密与此方块相同，但攻击是改变朝向，目标为所有方块朝向一致，与上述数字型解密内核相同。数字型是模<span class="math inline">\(3,\)</span>朝向型是模<span class="math inline">\(4,\)</span>即<span class="math inline">\(m=3\)</span>或<span class="math inline">\(4\)</span></p>
+<p>对于有<span class="math inline">\(n\)</span>个方块的谜题，<span class="math inline">\(n\)</span>个方块上现有的数字即为<span class="math inline">\(S.\ n\)</span>个方块正对应<span class="math inline">\(n\)</span>个操作，可按照操作的影响写出矩阵<span class="math inline">\(P.\)</span>解方程组得到答案。</p>
+<p>以图中谜题为例， <span class="math inline">\(P=\begin{bmatrix}  1&amp;1&amp;0&amp;0&amp;0  \\1&amp;1&amp;1&amp;0&amp;0  \\0&amp;1&amp;1&amp;1&amp;0  \\0&amp;0&amp;1&amp;1&amp;1  \\0&amp;0&amp;0&amp;1&amp;1  \end{bmatrix},\)</span> <span class="math inline">\(S=\begin{bmatrix}  1  \\1  \\2  \\1  \\1  \end{bmatrix},\)</span> 此处模数<span class="math inline">\(3\)</span>为质数，故<span class="math inline">\(S&#39;\)</span>可任取，这里取 <span class="math inline">\(S&#39;=\begin{bmatrix}  0  \\0  \\0  \\0  \\0  \end{bmatrix}.\)</span></p>
+<p>得到方程 <span class="math inline">\(\begin{bmatrix}  1&amp;1&amp;0&amp;0&amp;0  \\1&amp;1&amp;1&amp;0&amp;0  \\0&amp;1&amp;1&amp;1&amp;0  \\0&amp;0&amp;1&amp;1&amp;1  \\0&amp;0&amp;0&amp;1&amp;1  \end{bmatrix}  \begin{bmatrix}  x_1  \\x_2  \\x_3  \\x_4  \\x_5  \end{bmatrix}\equiv  \begin{bmatrix}  2  \\2  \\1  \\2  \\2  \end{bmatrix} \pmod 3\)</span></p>
+<p>给出一个解：<span class="math inline">\(X=(2,0,0,1,1)^T,\)</span>即攻击最左边的方块两次，最右边的两个方块分别一次即可。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%8E%9F%E7%A5%9E/">原神</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享 署名-相同方式共享 4.0 国际许可协议(CC BY-SA 4.0)</a>进行许可。
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/10/%E6%95%B0%E5%AD%97%E6%8E%A8%E7%9B%98-%E6%95%B0%E5%AD%97%E5%8D%8E%E5%AE%B9%E9%81%93-%E7%9A%84%E5%8F%AF%E8%A7%A3%E6%80%A7/">
+                        <span class="hidden-mobile">数字推盘(数字华容道)的可解性</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"R9WoGnGoecatFzYRmjWc0wgH-MdYXbMMI","appKey":"7z2iGID2p2PgXh7n49vqiYBv","path":"window.location.pathname","placeholder":">_<","avatar":"identicon","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <span>幽雅に咲かせ、墨染の桜。</span><br /> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
